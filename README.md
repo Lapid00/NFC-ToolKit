@@ -20,6 +20,6 @@ App allows you:
 
 ## Interface
 
-<img alt="User Interface" src="https://drive.google.com/uc?export=view&id=1VjWUuRhLQb8X9BkibLwDKrKAE46DyFYW" width="400" height="700">
-<img alt="User Interface" src="https://drive.google.com/uc?export=view&id=1vix0eJwHTIPwCzGbCzUpKkhdcHiU4JSV" width="400" height="700">
-<img alt="User Interface" src="https://drive.google.com/uc?export=view&id=1LzFCAxJeMyZw_XCdoTgo2bj09CZwn9UB" width="400" height="700">
+<img alt="User Interface" src="https://drive.google.com/uc?export=view&id=1Vj/WUuRhLQb8X9BkibLwDKrKAE46DyFYW" width="400" height="700">
+<img alt="User Interface" src="https://drive.google.com/uc?export=view&id=1vix/0eJwHTIPwCzGbCzUpKkhdcHiU4JSV" width="400" height="700">
+<img alt="User Interface" src="https://drive.google.com/uc?export=view&id=1LzFC/AxJeMyZw_XCdoTgo2bj09CZwn9UB" width="400" height="700">
