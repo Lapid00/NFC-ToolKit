@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name" translatable="false">NFC ToolKit</string>
+
+    <string name="tapTag">Approach an NFC tag</string>
+	
+	<string name="errorPrompt">An error has occurred.</string>
+	<string name="donePrompt">Done.</string>
+	<string name="erasingPrompt">Erasing in progress...</string>
+    <string name="writingPrompt">Writing in progress...</string>
+	<string name="nfcOnPrompt">Device is ready!</string>
+    <string name="nfcOffPrompt">NFC module is disabled!</string>
+    <string name="nfcNonePrompt">Device has not NFC module!</string>
+		
+	<string name="btnClose">Close</string>
+	<string name="btnSave">Write to tag</string>
+	
+    <string name="decodeNFC">Read tag</string>
+    <string name="encodeNFC">Write tag</string>
+    <string name="eraseNFC">Erase tag</string>
+
+    <string name="showContent">Show tag content</string>
+    <string name="showTech">Show tag info</string>
+    <string name="tagEmpty">Tag is empty.</string>
+    <string name="tagCopied">Text has been copied to clipboard.</string>
+	<string name="tagContent">[CONTENT]</string>
+    <string name="tagTechnologies">[TECHNOLOGIES]</string>
+    <string name="tagType">[CARD TYPE]</string>
+    <string name="tagSize">[SIZE]</string>
+    <string name="tagSectorCount">[SECTOR COUNT]</string>
+    <string name="tagBlockCount">[BLOCK COUNT]</string>
+    <string name="tagWritable">[TAG WRITABLE]</string>
+	<string name="tagReadOnly">[CAN MAKE READ ONLY]</string>
+	<string name="tagUnknown">Unknown</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+
+    <string name="makeReadOnly">Make tag read only</string>
+
+    <string name="headerTel">PHONE NUMBER</string>
+    <string name="headerSMS">SMS</string>
+    <string name="headerGeo">GEO LOCATION</string>
+    <string name="headerEmail">E-MAIL</string>
+    <string name="headerBluetooth">BLUETOOTH CONNECTION</string>
+    <string name="headerText">TEXT MESSAGE</string>
+    <string name="headerURI" translatable="false">URI</string>
+
+    <string name="textTel">Phone number:</string>
+    <string name="textMessage">Message:</string>
+    <string name="textLat">Latitude:</string>
+    <string name="textLong">Longitude</string>
+    <string name="textEmailReceipent">Receipent:</string>
+    <string name="textEmailSubject">Subject:</string>
+    <string name="textMAC" translatable="false">MAC:</string>
+
+    <string name="hintTel">Enter the phone number, including the area code.</string>
+    <string name="hintMessage">Type message.</string>
+    <string name="hintLat">Type latitude.</string>
+    <string name="hintLong">Type longitude.</string>
+    <string name="hintEmailReceipent">Type email address.</string>
+    <string name="hintSubject">Type subject.</string>
+    <string name="hintMAC">Type MAC address.</string>
+    <string name="tagNonWritable">Tag is not writable.</string>
+    <string name="tagToSmall">Tag is too small.</string>
+    <string name="uncheckPrompt">Please uncheck \"Show tag info\" checkbox</string>
+</resources>

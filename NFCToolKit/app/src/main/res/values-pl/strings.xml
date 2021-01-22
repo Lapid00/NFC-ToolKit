@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tapTag">Zbliż tag NFC do telefonu.</string>
+	
+	<string name="errorPrompt">Wystąpił błąd.</string>
+	<string name="donePrompt">Gotowe.</string>
+	<string name="erasingPrompt">Trwa kasowanie...</string>
+    <string name="writingPrompt">Trwa zapis...</string>
+    <string name="nfcOnPrompt">Aplikacja jest gotowa do pracy!</string>
+    <string name="nfcOffPrompt">Moduł NFC jest wyłączony!</string>
+    <string name="nfcNonePrompt">Urządzenie nie ma modułu NFC!</string>
+	
+	<string name="btnClose">Zamknij</string>
+	<string name="btnSave">Zapisz</string>
+
+    <string name="decodeNFC">Odczytaj zawartość tagu</string>
+    <string name="encodeNFC">Zapisz informacje na tagu</string>
+    <string name="eraseNFC">Skasuj zawartość tagu</string>
+
+
+    <string name="showContent">Wyświetl zawartość tagu</string>
+    <string name="showTech">Wyświetl parametry techniczne tagu</string>
+	<string name="tagEmpty">Tag jest pusty.</string>
+    <string name="tagCopied">Tekst został skopiowany do schowka.</string>
+    <string name="tagContent">[ZAWARTOŚĆ TAGU]</string>
+    <string name="tagTechnologies">[TECHNOLOGIE]</string>
+    <string name="tagType">[RODZAJ]</string>
+    <string name="tagSize">[ROZMIAR]</string>
+    <string name="tagSectorCount">[ILOŚĆ SEKTORÓW]</string>
+    <string name="tagBlockCount">[ILOŚĆ BLOKÓW]</string>
+    <string name="tagWritable">[ZAPISYWALNY]</string>
+	<string name="tagReadOnly">[MOŻNA USTAWIĆ TYLKO DO ODCZYTU]</string>
+	<string name="tagUnknown">Nieznany</string>
+    <string name="yes">TAK</string>
+    <string name="no">NIE</string>
+	
+    <string name="makeReadOnly">Ustaw tag w trybie \"Tylko do oczytu\"</string>
+	
+    <string name="headerTel">NUMER TELEFONU</string>
+    <string name="headerSMS">WIADOMOŚĆ SMS</string>
+    <string name="headerGeo">LOKALIZACJA GPS</string>
+    <string name="headerEmail">WIADOMOŚĆ E-MAIL</string>
+    <string name="headerBluetooth">POŁĄCZENIE BLUETOOTH</string>
+    <string name="headerText">WIADOMOŚĆ TEKSTOWA</string>
+	
+    <string name="textTel">Numer telefonu:</string>
+    <string name="textMessage">Treść:</string>
+	<string name="textLat">Szerokość geograficzna:</string>
+    <string name="textLong">Długość geograficzna:</string>
+	<string name="textEmailReceipent">Odbiorca:</string>
+	<string name="textEmailSubject">Temat:</string>
+
+    <string name="hintTel">Wprowadź numer telefonu wraz z numerem kierunkowym.</string>
+    <string name="hintMessage">Wpisz wiadomość.</string>
+    <string name="hintLat">Wprowadź szerokość geograficzną.</string>
+    <string name="hintLong">Wprowadź długość geograficzną.</string>
+    <string name="hintEmailReceipent">Wprowadź adres email.</string>
+    <string name="hintSubject">Wpisz temat wiadomości.</string>
+    <string name="hintMAC">Wprowadź adres MAC.</string>
+    <string name="tagNonWritable">Tag jest ustawiony w tryb tylko do odczytu.</string>
+    <string name="tagToSmall">Tag ma za mało pamięci.</string>
+    <string name="uncheckPrompt">Odznacz \"Wyświetl parametry techniczne tagu\", aby uruchomić akcje</string>
+</resources>
