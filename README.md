@@ -19,7 +19,7 @@ App allows you:
  - Erase data from NFC tag
 
 ## Interface
-![alt text](https://github.com/PjesekDev/NFC-ToolKit/blob/main/ScreenShots/HomeScreen.jpg?raw=true)
-<img src="https://drive.google.com/uc?export=view&id=1KH1cTql-QuFWckNKPD04syhA0VKIYUpJ">
-<img src="https://drive.google.com/uc?export=view&id=1pFPgXJxGylpKeFbmtXFDVhp6s6SPDfvv">
-<img src="https://drive.google.com/uc?export=view&id=1U37iSeNXf4dvLEejFPS_fcdfAHAIsVY0">
+
+![User interface](https://github.com/PjesekDev/NFC-ToolKit/blob/main/ScreenShots/HomeScreen.jpg?raw=true)
+![User interface](https://github.com/PjesekDev/NFC-ToolKit/blob/main/ScreenShots/ReadScreen.jpg?raw=true)
+![User interface](https://github.com/PjesekDev/NFC-ToolKit/blob/main/ScreenShots/WriteScreen.jpg?raw=true)
