@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EncodeActivity"
+    android:background="#FFFFFF">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tapTagLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/nfcInfo"
+            android:layout_width="402dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="456dp"
+            android:text="@string/tapTag"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/gifDecode"
+            android:layout_width="411dp"
+            android:layout_height="544dp"
+
+            android:layout_marginStart="4dp"
+            android:src="@drawable/waiting"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp">
+
+            <Switch
+                android:id="@+id/makeReadableOnly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/makeReadOnly" />
+
+            <TextView
+                android:id="@+id/headerTel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="@string/headerTel"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textTel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/textTel" />
+
+            <EditText
+                android:id="@+id/inputTel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:capitalize="none"
+                android:digits="+()123456789"
+                android:ems="10"
+                android:hint="@string/hintTel"
+                android:inputType="phone"
+                android:maxLength="15"
+                android:text="+48" />
+
+            <Button
+                android:id="@+id/saveTel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="encodeTel"
+                android:text="@string/btnSave"
+                android:theme="@style/Button" />
+
+            <TextView
+                android:id="@+id/headerSMS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="@string/headerSMS"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textTelSMS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/textTel" />
+
+            <EditText
+                android:id="@+id/inputTelSMS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:capitalize="none"
+                android:digits="+()123456789"
+                android:ems="10"
+                android:hint="@string/hintTel"
+                android:inputType="phone"
+                android:maxLength="15"
+                android:text="+48" />
+
+            <TextView
+                android:id="@+id/textMessageSMS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/textMessage" />
+
+            <EditText
+                android:id="@+id/inputMessageSMS"
+                android:layout_width="381dp"
+                android:layout_height="112dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="@string/hintMessage"
+                android:inputType="textMultiLine"
+                android:maxLength="1600" />
+
+            <Button
+                android:id="@+id/saveSMS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="encodeSMS"
+                android:text="@string/btnSave"
+                android:theme="@style/Button" />
+
+            <TextView
+                android:id="@+id/headerGEO"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="@string/headerGeo"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textGEOLat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/textLat" />
+
+            <EditText
+                android:id="@+id/inputLat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="123456789."
+                android:ems="10"
+                android:hint="@string/hintLat"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textGEOLon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/textLong" />
+
+            <EditText
+                android:id="@+id/inputLon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="123456789."
+                android:ems="10"
+                android:hint="@string/hintLong"
+                android:inputType="textPersonName" />
+
+            <Button
+                android:id="@+id/saveGEO"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="encodeGeo"
+                android:text="@string/btnSave"
+                android:theme="@style/Button" />
+
+            <TextView
+                android:id="@+id/headerEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="@string/headerEmail"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textEmailReceipent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/textEmailReceipent" />
+
+            <EditText
+                android:id="@+id/inputEmailReceipent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hintEmailReceipent"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textEmailSubject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/textEmailSubject" />
+
+            <EditText
+                android:id="@+id/inputEmailSubject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hintSubject"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textEmailMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/textMessage" />
+
+            <EditText
+                android:id="@+id/inputEmailMessage"
+                android:layout_width="match_parent"
+                android:layout_height="112dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="@string/hintMessage"
+                android:inputType="textMultiLine"
+                android:maxLength="38400" />
+
+            <Button
+                android:id="@+id/saveEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="encodeEmail"
+                android:text="@string/btnSave"
+                android:theme="@style/Button" />
+
+            <TextView
+                android:id="@+id/headerBluetooth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="@string/headerBluetooth"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textBluetooth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/textMAC" />
+
+            <EditText
+                android:id="@+id/inputBluetooth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hintMAC"
+                android:inputType="textPersonName" />
+
+            <Button
+                android:id="@+id/saveBluetooth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="encodeBluetooth"
+                android:text="@string/btnSave"
+                android:theme="@style/Button" />
+
+            <TextView
+                android:id="@+id/headerText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="@string/headerText"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/textMessage" />
+
+            <EditText
+                android:id="@+id/inputText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hintMessage"
+                android:inputType="textPersonName" />
+
+            <Button
+                android:id="@+id/saveText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="encodeText"
+                android:text="@string/btnSave"
+                android:theme="@style/Button" />
+
+            <TextView
+                android:id="@+id/headerURI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="@string/headerURI"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textTextURI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/textMessage" />
+
+            <EditText
+                android:id="@+id/inputURIMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hintMessage"
+                android:inputType="textPersonName" />
+
+            <Button
+                android:id="@+id/saveURI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="encodeURI"
+                android:text="@string/btnSave"
+                android:theme="@style/Button" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
