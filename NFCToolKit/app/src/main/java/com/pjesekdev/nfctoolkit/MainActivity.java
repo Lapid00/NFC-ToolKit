@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -39,63 +40,50 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        imageWelcomeText = findViewById(R.id.imageWelcomeText);
-        imageLogo = findViewById(R.id.imageLogo);
+        ConstraintLayout constraintLayout = findViewById(R.id.mainLayout);
 
-        FloatingActionButton mainFab = findViewById(R.id.main_add_fab);
-        encodeFab = findViewById(R.id.encodeNFC_fab);
-        decodeFab = findViewById(R.id.decodeNFC_fab);
-        eraseFab = findViewById(R.id.eraseNFC_fab);
+        imageWelcomeText = findViewById(R.id.img_welcome);
+        imageLogo = findViewById(R.id.img_logo);
 
-        encodeFabTitle = findViewById(R.id.encodeNFC);
-        decodeFabTitle = findViewById(R.id.decodeNFC);
-        eraseFabTitle = findViewById(R.id.eraseNFC);
+        FloatingActionButton mainFab = findViewById(R.id.fab_main);
+        encodeFab = findViewById(R.id.fab_encode);
+        decodeFab = findViewById(R.id.fab_decode);
+        eraseFab = findViewById(R.id.fab_erase);
+
+        encodeFabTitle = findViewById(R.id.tv_encode);
+        decodeFabTitle = findViewById(R.id.tv_decode);
+        eraseFabTitle = findViewById(R.id.tv_erase);
 
         fabOpenAnim = AnimationUtils.loadAnimation(MainActivity.this, R.anim.fab_open);
         fabCloseAnim = AnimationUtils.loadAnimation(MainActivity.this, R.anim.fab_close);
 
         isOpen = false;
 
-        encodeFab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goTo(EncodeActivity.class);
+        encodeFab.setOnClickListener(v -> goTo(EncodeActivity.class));
+
+        eraseFab.setOnClickListener(v -> goTo(EraseActivity.class));
+
+        decodeFab.setOnClickListener(v -> goTo(DecodeActivity.class));
+
+        mainFab.setOnClickListener(v -> {
+
+            if(isOpen){
+
+                setFabAnimation(fabCloseAnim);
+                setVisibility(View.VISIBLE, View.INVISIBLE);
+
+                isOpen = false;
+            } else {
+
+                setFabAnimation(fabOpenAnim);
+                setVisibility(View.INVISIBLE, View.VISIBLE);
+
+                isOpen = true;
             }
         });
 
-        eraseFab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goTo(EraseActivity.class);
-            }
-        });
-
-        decodeFab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goTo(DecodeActivity.class);
-            }
-        });
-
-        mainFab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if(isOpen){
-
-                    setFabAnimation(fabCloseAnim);
-                    setVisibility(View.VISIBLE, View.INVISIBLE);
-
-                    isOpen = false;
-                } else {
-
-                    setFabAnimation(fabOpenAnim);
-                    setVisibility(View.INVISIBLE, View.VISIBLE);
-
-                    isOpen = true;
-                }
-            }
-        });
+        TagTools tagTools = new TagTools(this, constraintLayout);
+        tagTools.checkNFCState();
     }
 
     private void setFabAnimation(Animation animation){

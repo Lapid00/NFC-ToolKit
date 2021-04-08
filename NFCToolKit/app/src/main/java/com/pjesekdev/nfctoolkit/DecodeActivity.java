@@ -26,8 +26,6 @@ import pl.droidsonroids.gif.GifImageView;
 
 public class DecodeActivity extends AppCompatActivity {
 
-    private FloatingActionButton btnCopy, btnParseUri;
-
     private NfcAdapter nfcAdapter;
     private PendingIntent pendingIntent;
     private IntentFilter[] intentFilters;
@@ -51,43 +49,23 @@ public class DecodeActivity extends AppCompatActivity {
         tagTools = new TagTools(this, getWindow().getDecorView().findViewById(android.R.id.content));
 
         checkTech = findViewById(R.id.checkTech);
-        checkData = findViewById(R.id.checkData);
+        checkData = findViewById(R.id.chk_data);
 
-        btnCopy = findViewById(R.id.btnCopy);
-        btnParseUri = findViewById(R.id.btnParseUri);
+        FloatingActionButton btnCopy = findViewById(R.id.btn_copy);
+        FloatingActionButton btnParseUri = findViewById(R.id.btn_parse);
 
-        checkTech.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                nfcOutput.setText(setOutput());
-            }
-        });
+        checkTech.setOnClickListener(v -> nfcOutput.setText(setOutput()));
 
-        checkData.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                nfcOutput.setText(setOutput());
-            }
-        });
+        checkData.setOnClickListener(v -> nfcOutput.setText(setOutput()));
 
-        btnCopy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                copyOutput();
-            }
-        });
+        btnCopy.setOnClickListener(v -> copyOutput());
 
-        btnParseUri.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                parseUri();
-            }
-        });
+        btnParseUri.setOnClickListener(v -> parseUri());
 
-        nfcInfo = findViewById(R.id.nfcInfo);
-        gifDecode = findViewById(R.id.gifDecode);
+        nfcInfo = findViewById(R.id.tv_info);
+        gifDecode = findViewById(R.id.gif_encode);
         nfcAdapter = NfcAdapter.getDefaultAdapter(this);
-        nfcOutput = findViewById(R.id.nfcOutput);
+        nfcOutput = findViewById(R.id.tv_output);
 
         pendingIntent = PendingIntent.getActivity(
                 this, 0, new Intent(this, getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);

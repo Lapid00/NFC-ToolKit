@@ -25,7 +25,7 @@ import java.nio.charset.StandardCharsets;
 public class TagTools {
 
     private final Context context;
-    private View view;
+    private final View view;
 
     public TagTools(Context context, View v){
         this.context=context;
@@ -78,16 +78,16 @@ public class TagTools {
 
         info[0] = "[UID] \n" + BaseEncoding.base16().lowerCase().encode(tag.getId()) + "\n\n";
         String[] techList = tag.getTechList();
-        String techListConcat = context.getResources().getString(R.string.tagTechnologies)+ "\n";
-        for (int i = 0; i < techList.length; i++) {
-            techListConcat += techList[i].substring(prefix.length()) + ",";
+        StringBuilder techListConcat = new StringBuilder(context.getResources().getString(R.string.tagTechnologies) + "\n");
+        for (String value : techList) {
+            techListConcat.append(value.substring(prefix.length())).append(",");
         }
         info[0] += techListConcat.substring(0, techListConcat.length() - 1) + "\n\n";
 
         info[0] += context.getResources().getString(R.string.tagType)+ "\n";
         String type = context.getResources().getString(R.string.tagUnknown)+ "\n\n";
-        for (int i = 0; i < techList.length; i++) {
-            if (techList[i].equals(MifareClassic.class.getName())) {
+        for (String s : techList) {
+            if (s.equals(MifareClassic.class.getName())) {
                 info[1] = "Mifare Classic";
                 MifareClassic mifareClassicTag = MifareClassic.get(tag);
 
@@ -104,10 +104,10 @@ public class TagTools {
                 }
                 info[0] += "Mifare " + type + "\n\n";
 
-                info[0] += R.string.tagSize+ "\n" + mifareClassicTag.getSize() + " b \n\n" +
-                        R.string.tagSectorCount+ "\n" + mifareClassicTag.getSectorCount() + "\n\n" +
-                        R.string.tagBlockCount+ "\n" + mifareClassicTag.getBlockCount() + "\n\n";
-            } else if (techList[i].equals(MifareUltralight.class.getName())) {
+                info[0] += R.string.tagSize + "\n" + mifareClassicTag.getSize() + " b \n\n" +
+                        R.string.tagSectorCount + "\n" + mifareClassicTag.getSectorCount() + "\n\n" +
+                        R.string.tagBlockCount + "\n" + mifareClassicTag.getBlockCount() + "\n\n";
+            } else if (s.equals(MifareUltralight.class.getName())) {
                 info[1] = "Mifare UltraLight";
                 MifareUltralight mifareUlTag = MifareUltralight.get(tag);
 
@@ -120,25 +120,21 @@ public class TagTools {
                         break;
                 }
                 info[0] += "Mifare " + type + "\n\n";
-            } else if (techList[i].equals(IsoDep.class.getName())) {
+            } else if (s.equals(IsoDep.class.getName())) {
                 info[1] = "IsoDep";
-                IsoDep isoDepTag = IsoDep.get(tag);
                 info[0] += "IsoDep \n\n";
-            } else if (techList[i].equals(Ndef.class.getName())) {
+            } else if (s.equals(Ndef.class.getName())) {
                 Ndef ndefTag = Ndef.get(tag);
                 if (ndefTag.isWritable()) {
-                    info[0] += context.getResources().getString(R.string.tagWritable)+ "\n" + context.getResources().getString(R.string.yes)+ "\n\n";
+                    info[0] += context.getResources().getString(R.string.tagWritable) + "\n" + context.getResources().getString(R.string.yes) + "\n\n";
                 } else {
-                    info[0] += context.getResources().getString(R.string.tagWritable)+ "\n" + context.getResources().getString(R.string.no)+ "\n\n";
+                    info[0] += context.getResources().getString(R.string.tagWritable) + "\n" + context.getResources().getString(R.string.no) + "\n\n";
                 }
                 if (ndefTag.canMakeReadOnly()) {
-                    info[0] += context.getResources().getString(R.string.tagReadOnly)+ "\n" + context.getResources().getString(R.string.yes)+ "\n\n";
+                    info[0] += context.getResources().getString(R.string.tagReadOnly) + "\n" + context.getResources().getString(R.string.yes) + "\n\n";
                 } else {
-                    info[0] += context.getResources().getString(R.string.tagReadOnly)+ "\n" + context.getResources().getString(R.string.no)+ "\n\n";
+                    info[0] += context.getResources().getString(R.string.tagReadOnly) + "\n" + context.getResources().getString(R.string.no) + "\n\n";
                 }
-
-            } else if (techList[i].equals(NdefFormatable.class.getName())) {
-                NdefFormatable ndefFormatableTag = NdefFormatable.get(tag);
             }
         }
         return info;
@@ -151,26 +147,25 @@ public class TagTools {
                 intent.getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES);
 
 
-        for (int i = 0; i < messages.length; i++) {
-                NdefMessage message = (NdefMessage) messages[i];
-                NdefRecord[] records = message.getRecords();
+        for (Parcelable parcelable : messages) {
+            NdefMessage message = (NdefMessage) parcelable;
+            NdefRecord[] records = message.getRecords();
 
-            for (int j = 0; j < records.length; j++) {
-                    NdefRecord record = records[j];
-                    byte[] payload = record.getPayload();
+            for (NdefRecord record : records) {
+                byte[] payload = record.getPayload();
 
-                if (record == null || record.getPayload() == null || record.getPayload().length == 0) {
-                    return context.getResources().getString(R.string.tagEmpty)+"\n\n";
+                if (record.getPayload() == null || record.getPayload().length == 0) {
+                    return context.getResources().getString(R.string.tagEmpty) + "\n\n";
                 }
 
                 int prefixCode = payload[0] & 0x0FF;
-                    if (prefixCode >= URI_PREFIX.length) prefixCode = 0;
+                if (prefixCode >= URI_PREFIX.length) prefixCode = 0;
 
-                    String reducedUri = new String(payload, 1, payload.length - 1, StandardCharsets.UTF_8);
+                String reducedUri = new String(payload, 1, payload.length - 1, StandardCharsets.UTF_8);
 
-                    uri = URI_PREFIX[prefixCode] + reducedUri;
-                }
+                uri = URI_PREFIX[prefixCode] + reducedUri;
             }
+        }
             return uri+"\n\n";
         }
 

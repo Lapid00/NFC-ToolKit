@@ -8,7 +8,7 @@
     android:background="#FFFFFF">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnCopy"
+        android:id="@+id/btn_copy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -24,7 +24,7 @@
         tools:visibility="visible" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnParseUri"
+        android:id="@+id/btn_parse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -40,7 +40,7 @@
         tools:visibility="visible" />
 
     <TextView
-        android:id="@+id/nfcInfo"
+        android:id="@+id/tv_info"
         android:layout_width="402dp"
         android:layout_height="40dp"
         android:layout_marginEnd="4dp"
@@ -54,7 +54,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/gifDecode"
+        android:id="@+id/gif_encode"
         android:layout_width="411dp"
         android:layout_height="544dp"
 
@@ -65,7 +65,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/nfcOutput"
+        android:id="@+id/tv_output"
         android:layout_width="371dp"
         android:layout_height="462dp"
 
@@ -80,7 +80,7 @@
         tools:visibility="invisible" />
 
     <CheckBox
-        android:id="@+id/checkData"
+        android:id="@+id/chk_data"
         android:layout_width="251dp"
         android:layout_height="42dp"
         android:layout_marginStart="16dp"
@@ -103,6 +103,6 @@
         android:text="@string/showTech"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkData" />
+        app:layout_constraintTop_toBottomOf="@+id/chk_data" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

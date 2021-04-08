@@ -47,15 +47,14 @@ public class EncodeActivity extends AppCompatActivity {
     public void ShowPopup(View v) {
         Button btnClose;
         dialog.setContentView(R.layout.popup);
-        btnClose = dialog.findViewById(R.id.btnClose);
-        btnClose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-                Intent myIntent = new Intent(EncodeActivity.this, MainActivity.class);
-                startActivity(myIntent);
-            }
+        btnClose = dialog.findViewById(R.id.btn_close);
+
+        btnClose.setOnClickListener(v1 -> {
+            dialog.dismiss();
+            Intent myIntent = new Intent(EncodeActivity.this, MainActivity.class);
+            startActivity(myIntent);
         });
+
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
     }
@@ -66,9 +65,9 @@ public class EncodeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_encode);
         tagTools = new TagTools(this, getWindow().getDecorView().findViewById(android.R.id.content));
 
-        mReadableOnly = findViewById(R.id.makeReadableOnly);
-        tapTagLayout = findViewById(R.id.tapTagLayout);
-        scrollView = findViewById(R.id.scrollView);
+        mReadableOnly = findViewById(R.id.chk_read_only);
+        tapTagLayout = findViewById(R.id.cslTag);
+        scrollView = findViewById(R.id.scrl_view);
         dialog = new Dialog(this);
 
         nfcAdapter = NfcAdapter.getDefaultAdapter(this);

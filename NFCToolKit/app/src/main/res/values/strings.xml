@@ -59,7 +59,6 @@
     <string name="hintEmailReceipent">Type email address.</string>
     <string name="hintSubject">Type subject.</string>
     <string name="hintMAC">Type MAC address.</string>
-    <string name="tagNonWritable">Tag is not writable.</string>
     <string name="tagToSmall">Tag is too small.</string>
     <string name="uncheckPrompt">Checkbox \"Show tag info\" must be unchecked.</string>
     <string name="checkPrompt">Checkbox \"Show tag content\" must be checked.</string>

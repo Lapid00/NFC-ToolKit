@@ -57,7 +57,6 @@
     <string name="hintEmailReceipent">Wprowadź adres email.</string>
     <string name="hintSubject">Wpisz temat wiadomości.</string>
     <string name="hintMAC">Wprowadź adres MAC.</string>
-    <string name="tagNonWritable">Tag jest ustawiony w tryb tylko do odczytu.</string>
     <string name="tagToSmall">Tag ma za mało pamięci.</string>
     <string name="uncheckPrompt">Pole  \"Wyświetl parametry techniczne tagu\" musi być odznaczone.</string>
     <string name="checkPrompt">Pole  \"Wyświetl zawartość tagu\" musi być zaznaczone.</string>

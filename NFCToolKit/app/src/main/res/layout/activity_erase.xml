@@ -8,7 +8,7 @@
     android:background="#FFFFFF">
 
     <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/gif"
+        android:id="@+id/gif_erase"
         android:layout_width="411dp"
         android:layout_height="544dp"
 
@@ -19,7 +19,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/nfcInfo2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="110dp"

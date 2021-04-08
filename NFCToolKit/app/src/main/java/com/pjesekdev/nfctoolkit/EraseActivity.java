@@ -35,15 +35,14 @@ public class EraseActivity extends AppCompatActivity {
     public void ShowPopup(View v) {
         Button btnClose;
         dialog.setContentView(R.layout.popup);
-        btnClose = dialog.findViewById(R.id.btnClose);
-        btnClose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-                Intent myIntent = new Intent(EraseActivity.this, MainActivity.class);
-                startActivity(myIntent);
-            }
+        btnClose = dialog.findViewById(R.id.btn_close);
+
+        btnClose.setOnClickListener(v1 -> {
+            dialog.dismiss();
+            Intent myIntent = new Intent(EraseActivity.this, MainActivity.class);
+            startActivity(myIntent);
         });
+
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
     }
